@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<div class="admin-container">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+        <h2>Admin Panel</h2>
+        <ul>
+            <li data-page="dashboard">📊 Dashboard</li>
+            <li data-page="users">👤 Users</li>
+            <li data-page="loginHistory">📅 Login History</li>
+            <li data-page="recipes">🍲 Recipes</li>
+            <li data-page="addRecipe">➕ Add Recipe</li>
+            <li id="logoutBtn">🚪 Logout</li>
+        </ul>
+    </aside>
+
+    <!-- RIGHT CONTENT -->
+    <main class="content-area">
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="page active">
+            <h1>Welcome Admin</h1>
+            <p>Select an option from the left menu.</p>
+        </section>
+
+        <!-- USERS PAGE -->
+        <section id="users" class="page">
+            <h1>Users List</h1>
+            <div id="usersList" class="grid"></div>
+        </section>
+
+        <!-- LOGIN HISTORY -->
+        <section id="loginHistory" class="page">
+            <h1>Login History</h1>
+            <div id="loginHistoryList" class="grid"></div>
+        </section>
+
+        <!-- RECIPES PAGE -->
+        <section id="recipes" class="page">
+            <h1>All Recipes</h1>
+            <div id="recipeList" class="grid"></div>
+        </section>
+
+        <!-- ADD / EDIT RECIPE -->
+        <section id="addRecipe" class="page">
+            <h1>Add / Edit Recipe</h1>
+            <form id="addForm" class="card">
+              <input id="rid" type="hidden">
+              <input id="rname" placeholder="Recipe name" required>
+              <input id="rimg" placeholder="Image URL">
+              <input id="rcat" placeholder="Category">
+              <textarea id="ring" placeholder="Ingredients (comma separated)"></textarea>
+              <textarea id="rsteps" placeholder="Steps (line break separated)"></textarea>
+              <button id="saveBtn">Save</button>
+              <button id="clearBtn" type="button">Clear</button>
+            </form>
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>

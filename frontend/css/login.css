@@ -1,0 +1,150 @@
+/* --------------------------------------------------
+   Global Reset + Typography
+-------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+
+    /* Background Image + Gradient Overlay */
+    background: 
+        linear-gradient(135deg, rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("C:/lj_university/rectjs/recipehub/frontend/img/img2.png") no-repeat center/cover;
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+/* --------------------------------------------------
+   Login Container (Glass Blur Card)
+-------------------------------------------------- */
+.login-container {
+    width: 450px;
+    height: 380px;
+    padding: 40px 29px;
+    border-radius: 20px;
+
+    /* Frosted Glass Effect */
+    background: rgba(255, 255, 255, 0.13);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    /* Soft shadow */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+
+    text-align: center;
+    color: #fff;
+
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(25px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.login-container h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* --------------------------------------------------
+   Inputs Style
+-------------------------------------------------- */
+.login-container input {
+    width: 100%;
+    padding: 14px 15px;
+    margin-bottom: 18px;
+
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.45);
+
+    background: rgba(255,255,255,0.18);
+    color: white;
+
+    font-size: 15px;
+    outline: none;
+    transition: 0.25s ease;
+}
+
+.login-container input::placeholder {
+    color: #eee;
+}
+
+.login-container input:focus {
+    background: rgba(255,255,255,0.25);
+    border-color: #ffb77d;
+    box-shadow: 0 0 8px rgba(255,180,120,0.6);
+}
+
+/* --------------------------------------------------
+   Login Button
+-------------------------------------------------- */
+.login-container button {
+    width: 100%;
+    padding: 14px;
+    background: #ff7e5f;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+    margin-top: 5px;
+}
+
+.login-container button:hover {
+    background: #ff5722;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(255,87,34,0.35);
+}
+
+.link {
+    display: block;
+    margin-top: 25px;
+    color: #ffd6c2;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.25s;
+}
+
+.link:hover {
+    color: #ffb08a;
+    text-decoration: underline;
+}
+
+
+/* Error Message */
+#msg {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #ffb3b3;
+}
+
+/* --------------------------------------------------
+   Mobile Responsive
+-------------------------------------------------- */
+@media (max-width: 420px) {
+    .login-container {
+        width: 100%;
+        padding: 30px 22px;
+        border-radius: 18px;
+    }
+
+    .login-container h2 {
+        font-size: 26px;
+    }
+}

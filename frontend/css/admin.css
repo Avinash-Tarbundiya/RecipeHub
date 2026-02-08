@@ -1,0 +1,340 @@
+/* =========================================
+   Admin Dashboard CSS
+   ========================================= */
+
+/* ----- Variables ----- */
+:root {
+    --primary-color: #ff7f50;
+    --secondary-color: #ffd1a4;
+    --bg-color: #fff8f0;
+    --text-color: #333;
+    --text-light: #666;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 8px rgba(0,0,0,0.1);
+    --shadow-hover: 0 8px 16px rgba(0,0,0,0.15);
+    --border-radius: 12px;
+    --transition-speed: 0.3s;
+}
+
+/* ----- Global Styles ----- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+/* ----- Admin Container ----- */
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ----- Sidebar ----- */
+.sidebar {
+    width: 250px;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    transition: width var(--transition-speed);
+}
+
+.sidebar h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background var(--transition-speed), transform var(--transition-speed);
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    transform: translateX(5px);
+}
+
+/* ----- Main Content Area ----- */
+.content-area {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+/* ----- Page Sections ----- */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* ----- Section Titles ----- */
+.page h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* ----- Grid Layout ----- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* ----- Cards ----- */
+.card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: box-shadow var(--transition-speed), transform var(--transition-speed);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px);
+}
+
+/* ----- Form Inputs ----- */
+input, textarea, button {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+/* ----- Buttons ----- */
+button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* ----- Recipe Card Specific ----- */
+.recipe-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: box-shadow var(--transition-speed), transform var(--transition-speed);
+}
+
+/* ⭐ FIXED RECIPE IMAGE SIZE */
+#recipeList img,
+.recipe-card img {
+    width: 100%;
+    max-width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+.recipe-card .card-content {
+    padding: 1rem;
+}
+
+.recipe-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.recipe-card p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+.recipe-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px);
+}
+
+/* ----- Detail View ----- */
+.detail-view {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.detail-view img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+}
+
+.detail-view h2 {
+    margin-bottom: 1rem;
+}
+
+.detail-view p {
+    line-height: 1.6;
+    color: var(--text-light);
+}
+
+/* ----- Scrollbars ----- */
+.content-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+.content-area::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 4px;
+}
+
+.content-area::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+}
+
+/* ----- Responsive Styles ----- */
+@media (max-width: 992px) {
+    .admin-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 1rem 0.5rem;
+    }
+    .sidebar ul {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+    .sidebar li {
+        flex: 1;
+        text-align: center;
+    }
+    .content-area {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ----- Accessibility ----- */
+button:focus, input:focus, textarea:focus {
+    outline: 2px dashed var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* =========================================
+   Users & Login History Table Styling
+   ========================================= */
+#usersList, #loginHistoryList {
+    width: 100%;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+/* Table base styling */
+#usersList table, #loginHistoryList table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    font-size: 0.95rem;
+    
+}
+
+/* Table headers */
+#usersList th, #loginHistoryList th {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: bold;
+    padding: 12px 100px;
+    text-align: left;
+}
+
+/* Table cells */
+#usersList td, #loginHistoryList td {
+    padding: 12px 100px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Row hover effect */
+#usersList tr:hover, #loginHistoryList tr:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+/* Responsive table for mobile */
+@media (max-width: 600px) {
+    #usersList table, #loginHistoryList table {
+        display: block;
+    }
+    #usersList thead, #loginHistoryList thead {
+        display: none;
+    }
+    #usersList tr, #loginHistoryList tr {
+        display: block;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid var(--shadow);
+    }
+    #usersList td, #loginHistoryList td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        text-align: right;
+        position: relative;
+    }
+    #usersList td::before, #loginHistoryList td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-align: left;
+        position: absolute;
+        left: 10px;
+    }
+}

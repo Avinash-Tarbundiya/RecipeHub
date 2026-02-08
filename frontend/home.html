@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecipeHub - Home</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+
+        <div class="nav-left">
+            <img src="img/logo.png" class="logo-img">
+            <h1 class="site-name">RecipeHub</h1>
+        </div>
+
+        <ul class="nav-menu">
+            <!-- CATEGORY DROPDOWN -->
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Categories</a>
+                <div class="dropdown-content">
+                    <a href="#" data-cat="Breakfast">Breakfast</a>
+                    <a href="#" data-cat="Lunch">Lunch</a>
+                    <a href="#" data-cat="Dinner">Dinner</a>
+                    <a href="#" data-cat="Drinks">Drinks</a>
+                    <a href="#" data-cat="Snacks">Snacks</a>
+                    <a href="#" data-cat="Desserts">Desserts</a>
+                </div>
+            </li>
+
+            <!-- PAGES LINKS -->
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+
+
+            <!-- USER ACCOUNT -->
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Account</a>
+                <div class="dropdown-content">
+                    <a href="profile.html">Profile</a>
+                    <a href="#" id="logoutBtn">Logout</a>
+                </div>
+            </li>
+
+            <!-- ADMIN -->
+            <li><a href="admin.html">Admin Login</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- ================= SEARCH BAR ================= -->
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search recipes...">
+        <button id="searchBtn">Search</button>
+    </div>
+
+    <!-- ================= RECIPE GRID ================= -->
+    <div class="recipe-container" id="recipeContainer">
+        <!-- DATA WILL BE LOADED FROM home.js -->
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- CATEGORIES -->
+            <div class="footer-section">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#" data-cat="Breakfast">Breakfast</a></li>
+                    <li><a href="#" data-cat="Lunch">Lunch</a></li>
+                    <li><a href="#" data-cat="Dinner">Dinner</a></li>
+                    <li><a href="#" data-cat="Drinks">Drinks</a></li>
+                    <li><a href="#" data-cat="Snacks">Snacks</a></li>
+                    <li><a href="#" data-cat="Desserts">Desserts</a></li>
+                </ul>
+            </div>
+
+            <!-- PAGES -->
+            <div class="footer-section">
+                <h3>Pages</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- SOCIAL MEDIA -->
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 RecipeHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/home.js"></script>
+    <script>
+        document.getElementById('logoutBtn')?.addEventListener('click', () => {
+            sessionStorage.removeItem('userId');
+            sessionStorage.removeItem('loggedUser');
+            window.location.href = 'login.html';
+        });
+
+    </script>
+</body>
+
+</html>
