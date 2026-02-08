@@ -22,3 +22,27 @@ RecipeHub is a user-friendly web application where users can explore, search, an
 ---
 
 ## 📂 Project Structure
+
+RecipeHub/
+│── index.html
+│── css/
+│── js/
+│── images/
+│── README.md
+
+
+---
+
+## ▶️ How to Run the Project
+1. Clone the repository
+   ```bash
+   git clone https://github.com/Avinash-Tarbundiya/RecipeHub.git
+
+
+---
+
+## 🚀 README upload kaise kare (quick steps)
+```bash
+git add README.md
+git commit -m "Added README file"
+git push
